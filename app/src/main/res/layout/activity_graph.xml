@@ -64,7 +64,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        app:menu_open="arc_left">
+        app:menu_open="arc_left"
+        app:menu_scr="@drawable/ic_add">
 
 
 
@@ -73,6 +74,7 @@
             android:layout_height="wrap_content"
             android:text="Beer"
             android:id="@+id/beer_button"
+            android:src="@drawable/beer_bottle"
 
             app:fabSize="mini"/>
 
@@ -82,6 +84,7 @@
             android:layout_height="wrap_content"
             android:text="Wine"
             android:id="@+id/wine_button"
+            android:src="@drawable/wine_glass"
 
             app:fabSize="mini"/>
 
@@ -90,6 +93,7 @@
             android:layout_height="wrap_content"
             android:text="SHOTS"
             android:id="@+id/shots_button"
+            android:src="@drawable/shot_glass"
 
             app:fabSize="mini"/>
 

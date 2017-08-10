@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.NotificationBuilderWithBuilderAccessor;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -58,6 +59,7 @@ public class GraphActivity extends Fragment{
     private FloatingActionButton mAddNewDrinkButton;
     private static double prevVal = 0.0;
     List<Drink> myDrinksList = new ArrayList<>();
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -225,7 +227,7 @@ public class GraphActivity extends Fragment{
 //        return mLastRandom += mRand.nextDouble()*0.5 - 0.25;
 //    }
 
-    private double getBAC(){
+    public double getBAC(){
         return calculateBAC(Gender, Weight, AlcoholPercent, AlcoholVolume, TimePassed, prevVal);
     }
 
