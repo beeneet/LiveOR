@@ -2,22 +2,31 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="/Users/bkoirlal/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971b33c4e/gson-2.7.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/thitchener/drive/mobile/LiveOR/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="574c9d416966d2d6c7fce45cdfc609d8129f86c6">
+        <dex dex="/Users/thitchener/drive/mobile/LiveOR/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_bf382b8c537515b679b205140c0b5e04a683174f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/thitchener/drive/mobile/LiveOR/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/Users/thitchener/drive/mobile/LiveOR/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_c210140041bf5a988c90b21ac805d11fbd6df52e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/thitchener/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971b33c4e/gson-2.7.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.0"
         sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
-        <dex dex="/Users/bkoirlal/Documents/mobileApp/tashproj/MobileApp/app/build/intermediates/pre-dexed/debug/gson-2.7_a7fbe422c3eb2faae0f487a4e510d56027eede32.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/bkoirlal/Documents/mobileApp/tashproj/MobileApp/subProject/build/intermediates/bundles/default/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="7f9b4cea08dbb07fbdbef3dc46b3642823545ac3">
-        <dex dex="/Users/bkoirlal/Documents/mobileApp/tashproj/MobileApp/app/build/intermediates/pre-dexed/debug/classes_dbfcaa3cf20fadca215688e3d032e06296326f80.jar" />
+        <dex dex="/Users/thitchener/drive/mobile/LiveOR/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.7_2956ae5606d04c7ae62d9af3d024c7d700940a07/classes.dex" />
     </item>
 
 </items>

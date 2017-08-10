@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="library-1.5.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/ffc312231ae0ce20e055fa5274ff63ade2b74be8/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/ffc312231ae0ce20e055fa5274ff63ade2b74be8/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sa90.materialarcmenu/library/1.5.0/2e170b261a3972d32de1f81b2b24a7119c905a79/library-1.5.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
