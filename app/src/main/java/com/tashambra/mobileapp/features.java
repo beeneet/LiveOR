@@ -41,6 +41,7 @@ public class features extends AppCompatActivity {
     private LinearLayout mFeaturesLayout;
     private Button mEmergencyCall;
     private RideRequestButton mUberButton;
+    private Button mDownButton;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +79,8 @@ public class features extends AppCompatActivity {
                 finish();
             }
         });
+
+
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(features.this);
         final String emergency_phone = prefs.getString("EmergencyContact", "2027701632");
         final String emergency_address = prefs.getString("EmergencyAddress", "301 W Washington Ave NW");

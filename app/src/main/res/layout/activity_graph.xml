@@ -51,7 +51,14 @@
                 android:layout_height="match_parent"
                 android:id="@+id/graph" />
         </LinearLayout>
+        <Button
+            android:layout_height="60dp"
+            android:layout_width="60dp"
+            android:layout_marginTop="250dp"
+            android:background="@drawable/swipe_up_graph"
+            />
     </LinearLayout>
+
 
     <com.sa90.materialarcmenu.ArcMenu
         android:id="@+id/arcMenu"
@@ -115,4 +122,5 @@
             app:fabSize="mini"/>
 
     </com.sa90.materialarcmenu.ArcMenu>
+
 </FrameLayout>
