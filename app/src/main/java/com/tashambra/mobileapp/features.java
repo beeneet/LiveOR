@@ -1,21 +1,17 @@
 package com.tashambra.mobileapp;
 
-import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
-import android.location.Location;
-import android.location.LocationManager;
+
 import android.net.Uri;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -27,13 +23,9 @@ import com.lyft.networking.ApiConfig;
 import com.uber.sdk.android.core.UberButton;
 import com.uber.sdk.android.core.UberSdk;
 import com.uber.sdk.android.rides.RideParameters;
-import com.uber.sdk.android.rides.RideRequestActivityBehavior;
 import com.uber.sdk.android.rides.RideRequestButton;
-import com.uber.sdk.android.rides.RideRequestButtonCallback;
 import com.uber.sdk.core.auth.Scope;
-import com.uber.sdk.rides.client.ServerTokenSession;
 import com.uber.sdk.rides.client.SessionConfiguration;
-import com.uber.sdk.rides.client.error.ApiError;
 
 import android.preference.PreferenceManager;
 import android.widget.Toast;
@@ -54,21 +46,31 @@ public class features extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_features);
-//        mReset = (Button) findViewById(R.id.reset_params);
-//        mReset.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                FragmentManager fm = getSupportFragmentManager();
-//                Fragment existingFragment = fm.findFragmentById(R.id.container);
-//                if (existingFragment == null) {
-//                    Fragment info = new FirstTimeFragment();
-//                    fm.beginTransaction().replace(R.id.container, info).commit();
-//                }
-//                else{
-//                    Log.i("SHR","Not what I wanted");
-//                }
-//            }
-//        });
+
+        final GestureDetector gesture = new GestureDetector(features.this,
+                new GestureDetector.SimpleOnGestureListener() {
+                    @Override
+                    public boolean onDown(MotionEvent e) {
+                        return true;
+                    }
+                    @Override
+                    public boolean onFling(MotionEvent e1, MotionEvent e2, float v, float v1) {
+                        if(e2.getY() - e1.getY() > 50){
+                            finish();
+                        }
+                            return true;
+                    }
+                });
+
+        this.findViewById(android.R.id.content)
+                .setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return gesture.onTouchEvent(event);
+            }
+        });
+
+
         mBack = (Button) findViewById(R.id.back_button);
         mBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,14 +141,4 @@ public class features extends AppCompatActivity {
 
 
     }
-
-
-
-
-
-
-
-
-
-
 }
