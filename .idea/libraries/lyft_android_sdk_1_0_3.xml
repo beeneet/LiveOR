@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="lyft-android-sdk-1.0.3">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/a5232f3d853c892b002630e7257fb7e13e951e1e/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/a5232f3d853c892b002630e7257fb7e13e951e1e/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.lyft/lyft-android-sdk/1.0.3/d11335abc9d2b9faa5882db631bacc728aadd6d4/lyft-android-sdk-1.0.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,42 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.0"
+    defaultConfig {
+        applicationId "com.tashambra.mobileapp"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile project(path: ':subProject')
+
+    compile 'com.lyft:lyft-android-sdk-networking:1.0.3'  // Lyft API Wrapper
+    compile 'com.lyft:lyft-android-sdk-deeplink:1.0.3'    // Deeplink
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support:support-v4:26.+'
+    compile 'com.android.support:support-vector-drawable:26.+'
+    compile 'com.android.support:design:26.+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.sa90.materialarcmenu:library:1.5.0'
+    testCompile 'junit:junit:4.12'
+    compile 'com.uber.sdk:rides-android:0.6.1'
+    compile 'com.lyft:lyft-android-sdk:1.0.3'
+
+
+}

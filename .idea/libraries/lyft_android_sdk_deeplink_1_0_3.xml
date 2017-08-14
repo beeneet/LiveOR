@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="lyft-android-sdk-deeplink-1.0.3">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/30af917ffd1a60c034032e3fffc099237891c85e/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/30af917ffd1a60c034032e3fffc099237891c85e/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.lyft/lyft-android-sdk-deeplink/1.0.3/145d98f050a1e6fd729ca52282f5becc36251718/lyft-android-sdk-deeplink-1.0.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

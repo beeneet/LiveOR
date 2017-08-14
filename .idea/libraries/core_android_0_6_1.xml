@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="core-android-0.6.1">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/93a11bdb0ca3b2bf75f36a7642144a58f5528f00/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/93a11bdb0ca3b2bf75f36a7642144a58f5528f00/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.uber.sdk/core-android/0.6.1/37b0c4881aa82b057bb9ccfa4be501c8e55f568b/core-android-0.6.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
