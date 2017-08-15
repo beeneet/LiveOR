@@ -39,26 +39,54 @@
                 android:textSize="25dp"
                 android:textStyle="bold"
                 android:text=""/>
-
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="200dip"
-            android:background="@drawable/layout_border">
+            android:background="@drawable/layout_border"
+            >
             <com.jjoe64.graphview.GraphView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/graph" />
-        </LinearLayout>
-        <Button
-            android:layout_height="60dp"
-            android:layout_width="60dp"
-            android:layout_marginTop="250dp"
-            android:background="@drawable/swipe_up_graph"
-            />
-    </LinearLayout>
 
+
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="List of Drinks"
+            android:layout_gravity="center"
+            android:textSize="32dp"
+            android:textStyle="bold"
+            android:fontFamily="casual"
+            android:layout_marginTop="20dp"
+            />
+<LinearLayout
+
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:layout_marginTop="5dp"
+    >
+
+
+
+        <android.support.v7.widget.RecyclerView
+
+            android:layout_width="200dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:padding = "10dp"
+            android:id="@+id/recycler_view"
+
+            />
+
+    </LinearLayout>
+    </LinearLayout>
 
     <com.sa90.materialarcmenu.ArcMenu
         android:id="@+id/arcMenu"
@@ -70,8 +98,6 @@
         app:menu_color="@color/colorPrimaryDark"
         >
 
-
-
         <android.support.design.widget.FloatingActionButton
             android:layout_width="60dp"
             android:layout_height="wrap_content"
@@ -79,7 +105,6 @@
             android:id="@+id/beer_button"
             android:src="@drawable/beer_bottle"
             app:menu_color="@color/colorPrimaryDark"
-
             app:fabSize="mini"/>
 
 
@@ -90,7 +115,6 @@
             android:id="@+id/wine_button"
             android:src="@drawable/wine_glass"
             app:menu_color="@color/colorPrimaryDark"
-
             app:fabSize="mini"/>
 
         <android.support.design.widget.FloatingActionButton
@@ -100,7 +124,6 @@
             android:id="@+id/shots_button"
             android:src="@drawable/shot_glass"
             app:menu_color="@color/colorPrimaryDark"
-
             app:fabSize="mini"/>
 
         <android.support.design.widget.FloatingActionButton
@@ -109,7 +132,6 @@
             android:text="My Drinks"
             android:id="@+id/my_drinks_button"
             app:menu_color="@color/colorPrimaryDark"
-
             app:fabSize="mini"/>
 
         <android.support.design.widget.FloatingActionButton
@@ -118,7 +140,6 @@
             android:text="ADD NEW"
             android:id="@+id/add_new_drink_button"
             app:menu_color="@color/colorPrimaryDark"
-
             app:fabSize="mini"/>
 
     </com.sa90.materialarcmenu.ArcMenu>

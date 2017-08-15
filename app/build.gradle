@@ -37,6 +37,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.uber.sdk:rides-android:0.6.1'
     compile 'com.lyft:lyft-android-sdk:1.0.3'
-
+    compile 'com.android.support:cardview-v7:21.0.+'
+    compile 'com.android.support:recyclerview-v7:21.0.+'
 
 }

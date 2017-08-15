@@ -14,6 +14,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
@@ -67,6 +69,16 @@ public class GraphActivity extends Fragment{
     private static double prevVal = 0.0;
     List<Drink> myDrinksList = new ArrayList<>();
     private GestureDetectorCompat detector;
+    private EditText mDrinkname;
+    public String mdrinkname;
+
+    ArrayList<String> drinks = new ArrayList<>();
+    RecyclerView mRecyclerView;
+    RecyclerView.Adapter mAdapter;
+    RecyclerView.LayoutManager mLayoutManager;
+
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -76,6 +88,9 @@ public class GraphActivity extends Fragment{
     }
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View v = inflater.inflate(R.layout.activity_graph, container, false);
+
+
+
 
         ScheduledExecutorService scheduler =
                 Executors.newSingleThreadScheduledExecutor();
@@ -88,6 +103,7 @@ public class GraphActivity extends Fragment{
                             Vibrator v = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
                             v.vibrate(1000);
                             Toast.makeText(getActivity(),"BAC too high! Swipe Up quickly",Toast.LENGTH_SHORT).show();
+
                         }
                     }
                 });
@@ -128,6 +144,8 @@ public class GraphActivity extends Fragment{
         mBeerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                mdrinkname = "Beer";
                 showDrinksDialogBox(new Beer());
             }
         });
@@ -136,6 +154,8 @@ public class GraphActivity extends Fragment{
         mWineButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                mdrinkname = "Wine";
                 showDrinksDialogBox(new Wine());
             }
         });
@@ -144,17 +164,31 @@ public class GraphActivity extends Fragment{
         mShotsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                mdrinkname = "Shots";
                 showDrinksDialogBox(new Shot());
             }
         });
 
         mAddNewDrinkButton = (FloatingActionButton) v.findViewById(R.id.add_new_drink_button);
+        mDrinkname = (EditText) v.findViewById(R.id.drink_name_edit_text);
+
         mAddNewDrinkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 addNewDrinkDialogBox();
+                drinks.add(mDrinkname.getText().toString());
             }
         });
+
+
+        mRecyclerView = (RecyclerView) v.findViewById(R.id.recycler_view);
+        mRecyclerView.setHasFixedSize(true);
+        mLayoutManager = new LinearLayoutManager(getActivity());
+        mAdapter = new MainAdapter(drinks);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setAdapter(mAdapter);
+
 
         mMyDrinksButton = (FloatingActionButton) v.findViewById(R.id.my_drinks_button);
         mMyDrinksButton.setOnClickListener(new View.OnClickListener() {
@@ -306,6 +340,7 @@ public class GraphActivity extends Fragment{
         builder.setPositiveButton("ADD", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 prevVal = getBAC();
+                drinks.add(mdrinkname +"      BAC "+ new DecimalFormat(".####").format(getmBACvalue()));
                 setInitialTime(System.currentTimeMillis());
                 setAlcoholPercent(Double.valueOf(mAlcoholPercentEdit.getText().toString()));
                 setAlcoholVolume(Double.valueOf(mVolumeEditText.getText().toString()));

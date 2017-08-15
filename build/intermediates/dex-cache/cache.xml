@@ -7,8 +7,17 @@
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
-        sha1="184926a6dcaa1e871b38f926f130279535e596de">
+        sha1="fb9eaf10ab4e72f10e1df32ca2c915b69d9b1b11">
         <dex dex="/Users/saryal/Desktop/android/LiveOrFinal-FABfinalest/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_f8761c4453e660b15a4e6e4744335a0cebbaba40/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/saryal/.android/build-cache/70a2ca8b29af0765f765014cabb80ceccdceaa02/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
+        <dex dex="/Users/saryal/Desktop/android/LiveOrFinal-FABfinalest/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_81012d48ac924737f6bebe655bebbbbe5839d0ee/classes.dex" />
     </item>
     <item
         is-multidex="true"
