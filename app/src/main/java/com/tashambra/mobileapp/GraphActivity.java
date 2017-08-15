@@ -76,7 +76,7 @@ public class GraphActivity extends Fragment{
     RecyclerView mRecyclerView;
     RecyclerView.Adapter mAdapter;
     RecyclerView.LayoutManager mLayoutManager;
-
+    private TextView mText;
 
 
 
@@ -89,8 +89,7 @@ public class GraphActivity extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View v = inflater.inflate(R.layout.activity_graph, container, false);
 
-
-
+        mText = (TextView) v.findViewById(R.id.list_drinks);
 
         ScheduledExecutorService scheduler =
                 Executors.newSingleThreadScheduledExecutor();
@@ -144,7 +143,7 @@ public class GraphActivity extends Fragment{
         mBeerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                setvisible();
                 mdrinkname = "Beer";
                 showDrinksDialogBox(new Beer());
             }
@@ -154,7 +153,7 @@ public class GraphActivity extends Fragment{
         mWineButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                setvisible();
                 mdrinkname = "Wine";
                 showDrinksDialogBox(new Wine());
             }
@@ -164,7 +163,7 @@ public class GraphActivity extends Fragment{
         mShotsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                setvisible();
                 mdrinkname = "Shots";
                 showDrinksDialogBox(new Shot());
             }
@@ -176,8 +175,10 @@ public class GraphActivity extends Fragment{
         mAddNewDrinkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 addNewDrinkDialogBox();
-                drinks.add(mDrinkname.getText().toString());
+                mdrinkname = mDrinkname.getText().toString();
+
             }
         });
 
@@ -241,6 +242,9 @@ public class GraphActivity extends Fragment{
         return v;
     }
 
+    public void setvisible(){
+        mText.setVisibility(View.VISIBLE);
+    }
     public String getGender() {
         return Gender;
     }
@@ -374,6 +378,7 @@ public class GraphActivity extends Fragment{
         builder.setPositiveButton("ADD", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 prevVal = getBAC();
+                drinks.add(mdrinkname +"      BAC "+ new DecimalFormat(".####").format(getmBACvalue()));
 
                 SharedPreferences defaultsSharedPref = PreferenceManager.getDefaultSharedPreferences(dialogView.getContext());
                 String totalCustomDrinks = defaultsSharedPref.getString("TotalCustomDrinks", "0");
