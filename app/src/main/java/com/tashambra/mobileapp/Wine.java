@@ -5,7 +5,7 @@ public class Wine extends Drink {
 
     Wine(){
         this.name = "WINE";
-        this.AlcoholPercent = 11.6;
-        this.volume = 12;
+        this.AlcoholPercent = 12;
+        this.volume = 5;
     }
 }

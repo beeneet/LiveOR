@@ -3,7 +3,7 @@ package com.tashambra.mobileapp;
 public class Beer extends Drink {
 
     public Beer(){
-        this.name = "Regular Beer";
+        this.name = "Beer";
         this.AlcoholPercent = 5;
     }
 

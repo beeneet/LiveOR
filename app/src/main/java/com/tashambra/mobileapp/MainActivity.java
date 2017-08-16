@@ -123,4 +123,21 @@ public class MainActivity extends AppCompatActivity
         SharedPreferences defaultsSharedPref = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
         Log.i("shared_pref", defaultsSharedPref.getString("EmergencyContact", "DEFAULT"));
     }
+
+    @Override
+    public void onStart(){
+        super.onStart();
+        Log.i("TDH", "Notfication Service stopped");
+        Intent i = new Intent(this, NotificationService.class);
+        stopService(i);
+
+    }
+
+    @Override
+    public void onStop(){
+        super.onStop();
+        Log.i("TDH", "Notfication Service started");
+        Intent i = new Intent(this, NotificationService.class);
+        startService(i);
+    }
 }

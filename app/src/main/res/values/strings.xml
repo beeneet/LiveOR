@@ -70,11 +70,13 @@
         <item>@string/intersex</item>
     </string-array>
 
+
+    <string name="title_activity_main2">LiveOr</string>
     <string name="male">male</string>
     <string name="LiveOr">male</string>>
     <string name="female">female</string>
     <string name="intersex">intersex</string>
-    <string name="title_activity_main2">Main2Activity</string>
+
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

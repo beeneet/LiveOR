@@ -2,166 +2,103 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="/Users/bkoirlal/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations-java5/15.0/7011b4551a8451906759b05814c58b9eb829ea9b/annotations-java5-15.0.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/thitchener/drive/mobile/LiveORFinal/LiveOR/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.0"
-        sha1="7011b4551a8451906759b05814c58b9eb829ea9b">
-        <dex dex="/Users/bkoirlal/Documents/mobileApp/tashproj/LiveOR-shrijanbranch/app/build/intermediates/pre-dexed/debug/annotations-java5-15.0_4a952e16c3fdd814c8e73f1e7d8693cf37edbde0.jar" />
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/Users/thitchener/drive/mobile/LiveORFinal/LiveOR/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_3ede4d0f57578e3e3089f8cc04375359ff3b6feb/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/Users/bkoirlal/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.8.0/5ea7af56cc7c567ed9856d99efb30740e9b17ff/okio-1.8.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
-        <dex dex="/Users/bkoirlal/Documents/mobileApp/tashproj/LiveOR-shrijanbranch/app/build/intermediates/pre-dexed/debug/okio-1.8.0_d701820e59b4ef1e7cb5984ec2ed912d7badfe04.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/bkoirlal/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.1.0/aa557d71ead91cbf26e0c316a0f593d168303309/converter-gson-2.1.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="aa557d71ead91cbf26e0c316a0f593d168303309">
-        <dex dex="/Users/bkoirlal/Documents/mobileApp/tashproj/LiveOR-shrijanbranch/app/build/intermediates/pre-dexed/debug/converter-gson-2.1.0_2ade5bce23c3cc50530fa59be74fec6104a20f7c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/bkoirlal/.gradle/caches/modules-2/files-2.1/com.lyft/lyft-android-sdk-networking/1.0.3/9a4f7f66c789aa8f2f815a34588d5efab69b8c61/lyft-android-sdk-networking-1.0.3.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="9a4f7f66c789aa8f2f815a34588d5efab69b8c61">
-        <dex dex="/Users/bkoirlal/Documents/mobileApp/tashproj/LiveOR-shrijanbranch/app/build/intermediates/pre-dexed/debug/lyft-android-sdk-networking-1.0.3_1420af6537a209615c551bae41d96d64a03d760f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/bkoirlal/.android/build-cache/4f08471d97f6d2ea784e7752598305ac1da2b3d1/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="3a971a9077f1f23a981392ae0725817ec5df768b">
-        <dex dex="/Users/bkoirlal/Documents/mobileApp/tashproj/LiveOR-shrijanbranch/app/build/intermediates/pre-dexed/debug/classes_091b5a4f7dc1771bc10e24c8e860bcaaea29079e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/bkoirlal/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.1.0/2de7cd8b95b7021b1d597f049bcb422055119f2c/retrofit-2.1.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
-        <dex dex="/Users/bkoirlal/Documents/mobileApp/tashproj/LiveOR-shrijanbranch/app/build/intermediates/pre-dexed/debug/retrofit-2.1.0_efc4e97876368085a7c4be1cd787af06815c134e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/bkoirlal/.gradle/caches/modules-2/files-2.1/com.squareup.moshi/moshi/1.2.0/c27dff1588c45efcff2e07c29e9d148ee707da29/moshi-1.2.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="c27dff1588c45efcff2e07c29e9d148ee707da29">
-        <dex dex="/Users/bkoirlal/Documents/mobileApp/tashproj/LiveOR-shrijanbranch/app/build/intermediates/pre-dexed/debug/moshi-1.2.0_3372a18648c18ce149887061143d23bd25b31e29.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/bkoirlal/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/logging-interceptor/3.2.0/a56f28d5b7fab623c6c1d2afa08dd496d873ac21/logging-interceptor-3.2.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="a56f28d5b7fab623c6c1d2afa08dd496d873ac21">
-        <dex dex="/Users/bkoirlal/Documents/mobileApp/tashproj/LiveOR-shrijanbranch/app/build/intermediates/pre-dexed/debug/logging-interceptor-3.2.0_6b192f88eaa3233ebd1f02e391484a0560669ef8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/bkoirlal/.android/build-cache/294042f17856db1b30ff7736d258a0f2be0c743f/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="a5198d2a99ab69df182a2d037ac897356bf94ef8">
-        <dex dex="/Users/bkoirlal/Documents/mobileApp/tashproj/LiveOR-shrijanbranch/app/build/intermediates/pre-dexed/debug/classes_c04f5aab7fd45521865fce7f203db8098f0dd256.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/bkoirlal/Documents/mobileApp/tashproj/LiveOR-shrijanbranch/subProject/build/intermediates/bundles/default/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="7f9b4cea08dbb07fbdbef3dc46b3642823545ac3">
-        <dex dex="/Users/bkoirlal/Documents/mobileApp/tashproj/LiveOR-shrijanbranch/app/build/intermediates/pre-dexed/debug/classes_b3e2914a33d26c42c2a2f63160990bc68b9e3320.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/bkoirlal/.android/build-cache/b63b6692bf506357adacf3401cbd53b2b2966138/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="362e151ebac74027b6b8261d2071edd5393d4163">
-        <dex dex="/Users/bkoirlal/Documents/mobileApp/tashproj/LiveOR-shrijanbranch/app/build/intermediates/pre-dexed/debug/classes_5bba2274b97c2b64926bfe2ce6b8c8fa778fd5ea.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/bkoirlal/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.3.1/19047bdb6a4fc00a44124f64ca98e88fc204e7e3/okhttp-3.3.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="19047bdb6a4fc00a44124f64ca98e88fc204e7e3">
-        <dex dex="/Users/bkoirlal/Documents/mobileApp/tashproj/LiveOR-shrijanbranch/app/build/intermediates/pre-dexed/debug/okhttp-3.3.1_4afa0cdce60afd4db6e90522bd7a246cf9fbfcbd.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/bkoirlal/.android/build-cache/58a7a8c075e0557d0935caf8591c90fd24542ab9/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="b98f051e7d90bf3497889b2d66fd785b6fb46325">
-        <dex dex="/Users/bkoirlal/Documents/mobileApp/tashproj/LiveOR-shrijanbranch/app/build/intermediates/pre-dexed/debug/classes_df0b0b6a5c20ac1263f6ab3665d48dda25cfddc8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/bkoirlal/.gradle/caches/modules-2/files-2.1/com.uber.sdk/rides/0.6.0/eddace06fa2e9327be5f2cd71dcc81e4cc7f2871/rides-0.6.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="eddace06fa2e9327be5f2cd71dcc81e4cc7f2871">
-        <dex dex="/Users/bkoirlal/Documents/mobileApp/tashproj/LiveOR-shrijanbranch/app/build/intermediates/pre-dexed/debug/rides-0.6.0_b0806bd98dd50aec99da25cbd6203d8b1ebbdea6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/bkoirlal/.android/build-cache/69927f88e2484b5de91ddedc8991dc8d8b02ffd6/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="78fab648ea4869d8bcdf7764a3730e8056901846">
-        <dex dex="/Users/bkoirlal/Documents/mobileApp/tashproj/LiveOR-shrijanbranch/app/build/intermediates/pre-dexed/debug/classes_75192f447fa6ea45883df4916fa324fd8749a791.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/bkoirlal/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-moshi/2.0.2/f956770d1309927879550cdfa0144b63ac891654/converter-moshi-2.0.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="f956770d1309927879550cdfa0144b63ac891654">
-        <dex dex="/Users/bkoirlal/Documents/mobileApp/tashproj/LiveOR-shrijanbranch/app/build/intermediates/pre-dexed/debug/converter-moshi-2.0.2_8c9921fb7a337b95fade20d634964e0a4bd5157a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/bkoirlal/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/1.3.9/40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf/jsr305-1.3.9.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf">
-        <dex dex="/Users/bkoirlal/Documents/mobileApp/tashproj/LiveOR-shrijanbranch/app/build/intermediates/pre-dexed/debug/jsr305-1.3.9_91dea01db5c9b873aeebf25d1cfe00d2cdef0ba9.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/bkoirlal/.android/build-cache/25d261bc30686faf4cef9581d707cafbd374f9cf/output/jars/classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/thitchener/.android/build-cache/dc9df8715785055a431f6ed7fd8eab26c25e51f5/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.0"
         sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
-        <dex dex="/Users/bkoirlal/Documents/mobileApp/tashproj/LiveOR-shrijanbranch/app/build/intermediates/pre-dexed/debug/classes_51009f2a74ca34e0f4e14b934e3c63792fb7c2e2.jar" />
+        <dex dex="/Users/thitchener/drive/mobile/LiveORFinal/LiveOR/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_cbac5b1d836df9f7e4e40fae7f0610a11b5ec920/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/thitchener/.gradle/caches/modules-2/files-2.1/com.lyft/lyft-android-sdk-networking/1.0.3/9a4f7f66c789aa8f2f815a34588d5efab69b8c61/lyft-android-sdk-networking-1.0.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="9a4f7f66c789aa8f2f815a34588d5efab69b8c61">
+        <dex dex="/Users/thitchener/drive/mobile/LiveORFinal/LiveOR/app/build/intermediates/transforms/dex/debug/folders/1000/10/lyft-android-sdk-networking-1.0.3_cee18451838564e72a7e590f8e78ccfb15183db7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/thitchener/drive/mobile/LiveORFinal/LiveOR/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="c167b9c86ee170ef3fbfc1d70ae0dabb5f053454">
+        <dex dex="/Users/thitchener/drive/mobile/LiveORFinal/LiveOR/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_d6165fc7bbafe67c45aa3f87682c93da5e8eb9af/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/thitchener/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations-java5/15.0/7011b4551a8451906759b05814c58b9eb829ea9b/annotations-java5-15.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="7011b4551a8451906759b05814c58b9eb829ea9b">
+        <dex dex="/Users/thitchener/drive/mobile/LiveORFinal/LiveOR/app/build/intermediates/transforms/dex/debug/folders/1000/10/annotations-java5-15.0_07000026818617f2fbd43697a89e16f22eeb97e3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/thitchener/.android/build-cache/55da7faaa78968fbb90590cb6ef3d69d73d2e82c/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="b98f051e7d90bf3497889b2d66fd785b6fb46325">
+        <dex dex="/Users/thitchener/drive/mobile/LiveORFinal/LiveOR/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_7c0157e86f8851f7b05b1475d97029b7fd86e5c6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/thitchener/.android/build-cache/88e535ba9c92d16c79f745a39e5c232d9bc27486/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="362e151ebac74027b6b8261d2071edd5393d4163">
+        <dex dex="/Users/thitchener/drive/mobile/LiveORFinal/LiveOR/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_cf0d88dd8769a027b95d7f60f1231f4958fb1940/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/thitchener/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.1.0/2de7cd8b95b7021b1d597f049bcb422055119f2c/retrofit-2.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="/Users/thitchener/drive/mobile/LiveORFinal/LiveOR/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-2.1.0_7186b23e7412f71159fde2ff5500e2cb20e656a9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/thitchener/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.3.1/19047bdb6a4fc00a44124f64ca98e88fc204e7e3/okhttp-3.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="19047bdb6a4fc00a44124f64ca98e88fc204e7e3">
+        <dex dex="/Users/thitchener/drive/mobile/LiveORFinal/LiveOR/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.3.1_a5d56d83c31e1a1a0d8bbff2db65e9b08c0a7083/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/thitchener/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.1.0/aa557d71ead91cbf26e0c316a0f593d168303309/converter-gson-2.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="aa557d71ead91cbf26e0c316a0f593d168303309">
+        <dex dex="/Users/thitchener/drive/mobile/LiveORFinal/LiveOR/app/build/intermediates/transforms/dex/debug/folders/1000/10/converter-gson-2.1.0_36fd761850ab80d458eb074ed18bb4e6748fbd7e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/thitchener/.android/build-cache/4553d3bc2620654af457a760e3a35f05256ba576/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="3a971a9077f1f23a981392ae0725817ec5df768b">
+        <dex dex="/Users/thitchener/drive/mobile/LiveORFinal/LiveOR/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_48241fbebef2c5d231ebcf3311760b969c1b5532/classes.dex" />
     </item>
 
 </items>

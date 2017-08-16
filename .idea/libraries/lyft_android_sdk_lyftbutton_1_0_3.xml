@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="lyft-android-sdk-lyftbutton-1.0.3">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.android/build-cache/b63b6692bf506357adacf3401cbd53b2b2966138/output/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.android/build-cache/b63b6692bf506357adacf3401cbd53b2b2966138/output/res" />
+      <root url="file://$USER_HOME$/.android/build-cache/88e535ba9c92d16c79f745a39e5c232d9bc27486/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/88e535ba9c92d16c79f745a39e5c232d9bc27486/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

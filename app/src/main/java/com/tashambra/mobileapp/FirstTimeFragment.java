@@ -67,6 +67,7 @@ public class FirstTimeFragment extends Fragment{
                 edit.putString("EmergencyAddress", mEmergencyAddress.getText().toString());
                 edit.putString("SettingsDone", "1");
                 edit.putString("TotalCustomDrinks", "0");
+                edit.putString("CurrentBAC", "0");
                 edit.apply();
                 Toast.makeText(getContext(), "User details stored successfully", Toast.LENGTH_SHORT);
                 Intent intent = new Intent(getActivity(), MainActivity.class);

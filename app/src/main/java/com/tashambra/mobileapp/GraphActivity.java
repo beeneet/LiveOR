@@ -1,9 +1,12 @@
 package com.tashambra.mobileapp;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -78,6 +81,11 @@ public class GraphActivity extends Fragment{
     RecyclerView.Adapter mAdapter;
     RecyclerView.LayoutManager mLayoutManager;
     private TextView mText;
+    public DBHelper mDbHelper;
+    public static List<Drink> mCurrDrinkSessionDrinks = new ArrayList<>();
+
+
+
 
 
 
@@ -85,10 +93,20 @@ public class GraphActivity extends Fragment{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
+        mDbHelper = new DBHelper(getContext());
+
 
     }
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View v = inflater.inflate(R.layout.activity_graph, container, false);
+
+
+
+        mDrinkSessionDrinks = readData(mDbHelper);
+
+
+
 
         mText = (TextView) v.findViewById(R.id.list_drinks);
 
@@ -182,7 +200,10 @@ public class GraphActivity extends Fragment{
         mRecyclerView = (RecyclerView) v.findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getActivity());
+
         mAdapter = new MainAdapter((ArrayList<Drink>) mDrinkSessionDrinks);
+
+
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
 
@@ -202,7 +223,10 @@ public class GraphActivity extends Fragment{
         String weightString = defaultsSharedPref.getString("WeightInPounds", "150");
         Weight = Double.valueOf(weightString);
         Gender = defaultsSharedPref.getString("Gender", "female");
+        setmBACvalue(Double.valueOf(defaultsSharedPref.getString("CurrentBAC","0")));
+        Log.i("TDH", " " + getmBACvalue());
         getBAC();
+        Log.i("TDH", "Init BAC:  " + getmBACvalue());
         mGraphTextView.setText(String.valueOf((new DecimalFormat(".####").format(getmBACvalue()))));
         mGraphTextView.setShadowLayer(3,3,3,Color.BLACK);
         final GraphView graph = (GraphView) v.findViewById(R.id.graph);
@@ -263,64 +287,124 @@ public class GraphActivity extends Fragment{
         return v;
     }
 
+    @Override
+    public void onStop(){
+        super.onStop();
+        SharedPreferences defaultsSharedPref = PreferenceManager.getDefaultSharedPreferences(getContext());
+        SharedPreferences.Editor edit = defaultsSharedPref.edit();
+        Log.i("ONSTOP: ", "" + getmBACvalue());
+        edit.putString("CurrentBAC", String.valueOf(Double.valueOf(getmBACvalue())));        //Updating the value
+        edit.apply();
+        writeData(mDbHelper);
+
+    }
+
+    public static void writeData(DBHelper dbHelper){
+
+        Log.i("TDH", "IN WRITEDATA: ");
+
+
+        // Gets the data repository in write mode
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        // Create a new map of values, where column names are the keys
+
+        for (Drink drink : mCurrDrinkSessionDrinks) {
+
+            Log.i("TDH", "IN WRITEDATA FOR: ");
+
+            ContentValues values = new ContentValues();
+            values.put(DBContract.FeedReaderContract.FeedEntry.NAME, drink.getName());
+            values.put(DBContract.FeedReaderContract.FeedEntry.PERCENT, drink.getAlcoholPercent());
+            values.put(DBContract.FeedReaderContract.FeedEntry.VOLUME, drink.getVolume());
+            values.put(DBContract.FeedReaderContract.FeedEntry.INIT_TIME, drink.getInitialTime());
+            values.put(DBContract.FeedReaderContract.FeedEntry.TIME_PASS, drink.getTimePassed());
+            values.put(DBContract.FeedReaderContract.FeedEntry.BAC, drink.getBACval());
+
+            // Insert the new row, returning the primary key value of the new row
+            long newRowId = db.insert(DBContract.FeedReaderContract.FeedEntry.TABLE_NAME, null, values);
+            Log.i("INWRITEDATA:", " " + values.keySet());
+
+        }
+
+
+    }
+
+    public static List<Drink> readData(DBHelper dbHelper){
+
+        Log.i("TDH", "IN READDATA: ");
+
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+
+        // Define a projection that specifies which columns from the database
+        // you will actually use after this query.
+        String[] projection = {
+                DBContract.FeedReaderContract.FeedEntry._ID,
+                DBContract.FeedReaderContract.FeedEntry.NAME,
+                DBContract.FeedReaderContract.FeedEntry.PERCENT,
+                DBContract.FeedReaderContract.FeedEntry.VOLUME,
+                DBContract.FeedReaderContract.FeedEntry.INIT_TIME,
+                DBContract.FeedReaderContract.FeedEntry.TIME_PASS,
+                DBContract.FeedReaderContract.FeedEntry.BAC
+        };
+
+        // Filter results WHERE "title" = 'My Title'
+        //String selection = null;
+        //String[] selectionArgs = { "My Title" };
+
+        // How you want the results sorted in the resulting Cursor
+       // String sortOrder =
+         //       DBContract.FeedReaderContract.FeedEntry.COLUMN_NAME_SUBTITLE + " DESC";
+
+        Cursor cursor = db.query(
+                DBContract.FeedReaderContract.FeedEntry.TABLE_NAME,                     // The table to query
+                projection,                               // The columns to return
+                null,                                // The columns for the WHERE clause
+                null,                            // The values for the WHERE clause
+                null,                                     // don't group the rows
+                null,                                     // don't filter by row groups
+                null                                 // The sort order
+        );
+
+        Log.i("TDH", "QUERY SUCCESSFUL: ");
+
+        List<Drink> drinks = new ArrayList<Drink>();
+
+        while(cursor.moveToNext()) {
+            Drink drink = new Drink();
+            Log.i("READDATA", "IN WHILE: ");
+
+            long itemId = cursor.getLong(
+                    cursor.getColumnIndexOrThrow(DBContract.FeedReaderContract.FeedEntry._ID));
+
+            drink.setName(cursor.getString(cursor.getColumnIndexOrThrow(DBContract.FeedReaderContract.FeedEntry.NAME)));
+            drink.setAlcoholPercent(cursor.getDouble(cursor.getColumnIndexOrThrow(DBContract.FeedReaderContract.FeedEntry.PERCENT)));
+            drink.setVolume(cursor.getDouble(cursor.getColumnIndexOrThrow(DBContract.FeedReaderContract.FeedEntry.VOLUME)));
+            drink.setInitialTime(cursor.getLong(cursor.getColumnIndexOrThrow(DBContract.FeedReaderContract.FeedEntry.INIT_TIME)));
+            drink.setTimePassed(cursor.getDouble(cursor.getColumnIndexOrThrow(DBContract.FeedReaderContract.FeedEntry.TIME_PASS)));
+            drink.setBACval(cursor.getDouble(cursor.getColumnIndexOrThrow(DBContract.FeedReaderContract.FeedEntry.BAC)));
+
+
+            drinks.add(drink);
+        }
+        cursor.close();
+
+        return drinks;
+    }
+
+
     public void setvisible(){
         mText.setText("List of Drinks");
         mText.setVisibility(View.VISIBLE);
     }
-    public String getGender() {
-        return Gender;
-    }
 
-    public void setGender(String gender) {
-        Gender = gender;
-    }
-
-    public double getWeight() {
-        return Weight;
-    }
-
-    public void setWeight(double weight) {
-        Weight = weight;
-    }
-
-    public double getAlcoholPercent() {
-        return AlcoholPercent;
-    }
-
-    public void setAlcoholPercent(double alcoholPercent) {
-        AlcoholPercent = alcoholPercent;
-    }
-
-    public double getAlcoholVolume() {
-        return AlcoholVolume;
-    }
-
-    public void setAlcoholVolume(double alcholVolume) {
-        AlcoholVolume = alcholVolume;
-    }
-
-    public double getTimePassed() {
-        return TimePassed;
-    }
-
-    public void setTimePassed(double timePassed) {
-        TimePassed = Math.min(timePassed, TimePassed);
-    }
-
-    public long getInitialTime() {
-        return initialTime;
-    }
-
-    public void setInitialTime(long initialTime) {
-        this.initialTime = initialTime;
-    }
 
     private void setmBACvalue(double resBAC){
         mBACvalue = resBAC;
     }
 
     private double getmBACvalue(){
-        return  mBACvalue;
+        return mBACvalue;
     }
 
 
@@ -331,7 +415,7 @@ public class GraphActivity extends Fragment{
             Log.i("CURRBAC", String.valueOf(totalBAC));
         }
         setmBACvalue(totalBAC);
-        return getmBACvalue();
+        return totalBAC;
     }
 
     //ALERT DIALOG AND ADDING DRINKS
@@ -354,6 +438,7 @@ public class GraphActivity extends Fragment{
                 Drink drink = new Drink(mDrinkName.getText().toString(), Double.valueOf(mAlcoholPercentEdit.getText().toString()), Double.valueOf(mVolumeEditText.getText().toString()));
                 drink.setTimePassed(Double.valueOf(mTimeSince.getText().toString()));
                 mDrinkSessionDrinks.add(drink);
+                mCurrDrinkSessionDrinks.add(drink);
                 setvisible();
             }
         });
@@ -389,6 +474,7 @@ public class GraphActivity extends Fragment{
                 Drink drink = new Drink(mDrinkNameEdit.getText().toString(), Double.valueOf(mAlcoholPercentEdit.getText().toString()), Double.valueOf(mVolumeEditText.getText().toString()));
                 drink.setTimePassed(Double.parseDouble(mTimeSince.getText().toString()));
                 mDrinkSessionDrinks.add(drink);
+                mCurrDrinkSessionDrinks.add(drink);
                 SharedPreferences.Editor edit = defaultsSharedPref.edit();
                 Gson gson = new Gson();
                 String json = gson.toJson(drink);
@@ -450,6 +536,7 @@ public class GraphActivity extends Fragment{
                 Drink drink = (Drink) parent.getAdapter().getItem(position);
                 drink.setTimePassed(Double.parseDouble(mTimeSince.getText().toString()));
                 mDrinkSessionDrinks.add(drink);
+                mCurrDrinkSessionDrinks.add(drink);
                 setvisible();
             }
         });
